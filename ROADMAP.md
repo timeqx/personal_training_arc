@@ -1,326 +1,481 @@
-# 24-Week Intensive Roadmap
+# 16-Week Hiring Sprint + Long-Term Mastery
 
-This is a **job-readiness accelerator**, not a claim that six months creates an expert. The advanced loop after Week 24 is where expertise compounds.
+Target window: **October 2026 → January 2027**, with active applications beginning before the sprint is finished.
 
-Default workload: 12–16 focused hours per week. If you have less time, preserve the order and stretch the calendar.
+The sprint is optimized around current target roles:
+- Applied AI
+- Agentic AI
+- AI-native full stack
+- Python/FastAPI AI
+- Rust backend
+- Rust × AI infrastructure
 
-## Week 0 — Baseline
+Default workload: **12–16 focused hours/week**.
 
-### Test
-- Take Rust Baseline Exam A.
-- Take AI/ML Baseline Exam A.
-- Take Systems Baseline Exam A.
-- Record scores without studying first.
+## Time allocation
 
-### Setup
-- Rust stable toolchain, rustfmt, Clippy, rust-analyzer.
-- Python 3.12+ environment.
-- Docker.
-- PostgreSQL.
-- GitHub Actions.
-- A notes folder for learning logs.
+Until application-ready:
+- **45% flagship building**
+- **25% fundamentals**
+- **15% testing/evaluation/debugging**
+- **10% interview practice**
+- **5% documentation/GitHub**
 
-### Deliverable
-Create a progress entry with:
-- current strengths,
-- current weak areas,
-- one-month targets,
-- evidence links.
+After applications start:
+- **35% flagship building**
+- **20% fundamentals**
+- **15% interview practice**
+- **15% applications/networking**
+- **10% tests/evals**
+- **5% documentation**
 
----
-
-## Weeks 1–4 — Foundations that must become automatic
-
-### Rust
-Week 1:
-- ownership, moves, Copy, Clone
-- borrowing and references
-- slices
-- Option and Result
-
-Week 2:
-- structs, enums, pattern matching
-- modules, crates, visibility
-- generics and traits
-- iterators and closures
-
-Week 3:
-- lifetimes
-- smart pointers
-- interior mutability
-- error design
-
-Week 4:
-- collections
-- testing
-- Cargo workspaces
-- idiomatic API design
-
-### AI/ML
-Week 1:
-- vectors, matrices, dot products
-- probability basics
-- NumPy
-
-Week 2:
-- linear regression
-- logistic regression
-- train/validation/test splits
-- metrics
-
-Week 3:
-- trees and ensembles
-- bias/variance
-- feature engineering
-- data leakage
-
-Week 4:
-- gradient descent
-- neural-network fundamentals
-- PyTorch tensors and autograd
-
-### Build
-- Rust CLI application with tests.
-- Implement linear regression twice: once from basic NumPy operations, once using scikit-learn.
-- Write a one-page explanation of ownership without using the phrase "the compiler handles it" as the explanation.
-
-### Gate
-You may move forward when:
-- you can predict common borrow-checker failures,
-- you can explain precision/recall/F1,
-- your projects run through CI.
+Do not add a new technology unless it closes a target-role gap or materially improves the flagship system.
 
 ---
 
-## Weeks 5–8 — Async Rust + Deep Learning
+# Week 0 — Baseline and setup
 
-### Rust
-- threads and message passing
-- Send and Sync
-- Arc, Mutex, RwLock
+## Exams
+Take without studying first:
+- Rust Baseline A
+- AI/ML Baseline A
+- Systems Baseline A
+
+## Setup
+- Rust stable, rustfmt, Clippy, rust-analyzer
+- Python 3.12+
+- PostgreSQL + pgvector
+- Docker
+- GitHub Actions
+- project journal
+- benchmark/eval folders
+
+## Output
+- baseline scores
+- top 5 gaps
+- current evidence links
+- exact target roles
+- first 4-week goals
+
+---
+
+# October — Rust core + working agent
+
+## Week 1 — Rust ownership + agent skeleton
+
+Rust:
+- ownership, move, Copy, Clone
+- borrowing/references
+- Option/Result
+- enums/pattern matching
+
+AI:
+- provider API basics
+- structured outputs
+
+Build:
+- create flagship Rust agent workspace
+- one provider
+- structured response type
+- unit tests
+
+Proof:
+- explain ownership without notes
+- CI running rustfmt + Clippy + cargo test
+
+## Week 2 — Traits, errors, provider abstraction
+
+Rust:
+- structs
+- traits/generics
+- error types
+- iterators
+- modules/crates
+
+Build:
+- LlmProvider abstraction
+- second provider
+- typed error taxonomy
+- retries/timeouts
+
+Exercise:
+Add a provider without editing core orchestration logic.
+
+## Week 3 — Tokio + tools
+
+Rust:
 - async/await
-- Future and polling model
-- Tokio tasks, channels, select, cancellation
-- HTTP clients
+- Future intuition
+- Tokio tasks
+- channels
+- Arc
+- Mutex/RwLock
+- Send/Sync
+
+AI:
+- function/tool calling
+- tool schemas
+
+Build:
+- async tool registry
+- bounded tool execution
+- malformed-argument tests
+- timeout handling
+
+Proof:
+- explain why/when Arc<Mutex<T>> is needed
+- demonstrate bounded concurrency
+
+## Week 4 — Axum + deployable v0
+
+Rust:
 - Axum
 - Serde
+- reqwest
 - tracing
-
-### AI
-- backpropagation
-- optimizers
-- regularization
-- embeddings
-- CNN/RNN concepts
-- attention
-- transformer architecture
-- tokenization
-- Hugging Face Transformers
-
-### Build
-- concurrent Rust web crawler with bounded concurrency and retries.
-- Axum API with PostgreSQL.
-- PyTorch text classifier.
-- implement scaled dot-product attention from scratch in PyTorch.
-- write a short report comparing synchronous threads vs Tokio for one I/O-bound workload.
-
-### Exam
-Take Rust Core Exam B and AI Fundamentals Exam B.
-
----
-
-## Weeks 9–12 — Systems + LLM Engineering
-
-### Rust
-- sockets and networking
-- async streams
-- backpressure
 - graceful shutdown
-- structured error taxonomy
-- property-based testing
-- benchmarking with Criterion
 
-### AI
-- inference vs training
-- prompting and structured output
-- tool/function calling
+Build:
+- HTTP API
+- streaming where feasible
+- basic state
+- Dockerfile
+- Docker Compose
+- simple dashboard or CLI trace view
+
+### October gate
+By October 31:
+- agent executes a real multi-step task,
+- supports at least two providers or one remote + one local provider,
+- has tests,
+- has CI,
+- runs from Docker,
+- emits structured traces.
+
+Take Rust Core Exam B.
+
+---
+
+# November — RAG + MCP + real evaluation
+
+## Week 5 — RAG foundations
+Learn:
 - embeddings
-- RAG ingestion
 - chunking
-- metadata filtering
-- vector search
-- hybrid retrieval
+- metadata
+- cosine similarity
+- Top-K
+- context windows
+
+Build:
+- ingestion pipeline
+- pgvector
+- source metadata
+- semantic retrieval
+
+Create:
+- first 30–50 eval questions.
+
+## Week 6 — Retrieval quality
+Learn:
+- hybrid search
 - reranking
-- grounding and citations
+- Recall@K
+- MRR/nDCG intuition
+- grounded answers
+- abstention
 
-### Systems
-- TCP/IP, HTTP, TLS
-- Linux processes and signals
-- PostgreSQL indexes and query plans
-- caching
-- queues
-- Docker
+Build:
+- hybrid retrieval if useful
+- reranker
+- citations
+- retrieval metrics
 
-### Build
-- production-style RAG service with FastAPI.
-- pgvector or Qdrant retrieval.
-- evaluation set of at least 50 questions.
-- report Recall@K, answer groundedness, latency, and cost.
-- Rust service that consumes a queue and performs concurrent jobs.
+Proof:
+Publish baseline vs improved retrieval results.
 
-### Application checkpoint
-At the end of Week 12, begin applying if your portfolio has:
-- a serious Rust repository,
-- an evaluated RAG project,
-- good READMEs,
-- tests and CI.
+## Week 7 — MCP
+Learn current MCP specification:
+- host/client/server
+- tools
+- resources
+- prompts
+- transport
+- schemas
+- permissions
 
-Do not wait for Week 24 to apply.
+Build:
+- Rust MCP server
+- Rust MCP client
+- Developer Workspace MCP tools
+- read-only/safe tool policies
+
+## Week 8 — Agent orchestration
+Learn:
+- state
+- router
+- planner/executor
+- deterministic workflows
+- checkpointing
+- human approval
+- fan-out/gather
+- critique/review loop
+
+Build only patterns that improve a real task:
+- router → specialist
+- planner → executor
+- one parallel workflow
+- destructive-action approval
+
+Also:
+- implement or study the equivalent workflow in LangGraph so you can discuss mainstream Python tooling.
+
+### November gate
+By November 30:
+- agent is clearly beyond a chatbot,
+- MCP client/server works,
+- RAG is evaluated,
+- at least 50 eval tasks exist,
+- permissions exist,
+- you can explain when **not** to use an agent.
+
+Take Agentic Systems Exam C.
 
 ---
 
-## Weeks 13–16 — Agents, MCP, and Advanced Rust
+# December — productionize + portfolio + applications
 
-### Rust
-- Pin and Unpin concepts
-- deeper Future mechanics
-- macro_rules
-- procedural macro concepts
+## Week 9 — Observability
+Build:
+- tracing
+- token accounting
+- cost estimates
+- tool latency
+- request latency
+- retries/errors
+- retrieval stats
+
+Study:
+- OpenTelemetry concepts
+- p50/p95/p99
+
+Deliver:
+- agent-run trace view/dashboard.
+
+## Week 10 — Reliability and security
+Build/test:
+- rate limiting
+- retries with jitter
+- cancellation
+- graceful shutdown
+- secret handling
+- prompt-injection tests
+- path restrictions
+- SQL read-only mode
+- approval gates
+
+Write:
+- threat model
+- failure-mode table.
+
+## Week 11 — Cloud deployment
+Learn one cloud well enough to operate the app:
+- IAM
+- compute
+- storage
+- managed DB
+- secrets
+- logs
+- container registry
+
+AWS is the default first choice; gain basic GCP literacy afterward.
+
+Deploy:
+- flagship app
+- database/vector store
+- logs/metrics
+
+## Week 12 — Portfolio release
+Required:
+- polished README
+- architecture diagram
+- setup instructions
+- screenshots
+- benchmark/eval table
+- limitations
+- threat model
+- 2–3 minute demo
+- live deployment
+- résumé bullets
+- pinned GitHub repository
+
+### December application gate
+Start/continue serious applications.
+
+Do **not** wait for:
+- advanced unsafe Rust,
+- Kubernetes depth,
+- advanced fine-tuning,
+- research-level ML theory.
+
+---
+
+# January — interview strength + deeper differentiation
+
+## Week 13 — Python AI production depth
+Strengthen:
+- asyncio
+- typing
+- Pydantic
+- FastAPI
+- SQLAlchemy
+- pytest
+- httpx
+- background work
+- dependency injection
+
+Build:
+- one Python/LangGraph reference implementation or service that interoperates with the Rust system.
+
+Purpose:
+Be employable for AI roles that do not use Rust.
+
+## Week 14 — ML/deep-learning credibility
+Learn/practice:
+- train/validation/test
+- leakage
+- precision/recall/F1/ROC-AUC
+- gradient descent
+- neural networks
+- PyTorch
+- transformers/attention/tokenization
+
+Build:
+- small scikit-learn project
+- small PyTorch project
+- scaled dot-product attention exercise
+
+Purpose:
+Avoid being only an LLM-wrapper engineer.
+
+## Week 15 — Rust backend interview depth
+Practice:
+- lifetimes
 - trait objects vs generics
-- zero-cost abstractions
-- allocations and memory layout
-- flamegraphs and profiling
+- concurrency
+- cancellation
+- networking
+- SQL
+- profiling
+- benchmarks
+- API design
 
-### AI
-- agent state
-- tool routing
-- planner/executor patterns
-- human-in-the-loop
-- retries and fallback
-- deterministic workflows vs autonomous agents
-- agent evaluation
-- prompt-injection threat modeling
-- MCP architecture
+Build:
+- load test
+- bottleneck analysis
+- one measured optimization
 
-### MCP
-Study the current MCP specification rather than old blog examples. Implement:
-- a client,
-- a server,
-- tools,
-- resources,
-- prompts,
-- authentication concepts,
-- safe permission boundaries.
+Take Rust Async/Concurrency Exam C.
 
-### Build
-- Rust MCP server.
-- Rust MCP client using the official Rust SDK where appropriate.
-- tool-call evaluation suite.
-- agent trace viewer.
-- approval gate for destructive tools.
+## Week 16 — application and defense week
+Do:
+- 2 Rust mock interviews
+- 2 AI mock interviews
+- 2 system-design interviews
+- final capstone defense
+- revise résumé
+- revise GitHub
+- tailor applications by job family
 
-### Exam
-Take Agentic Systems Exam C and Rust Async/Concurrency Exam C.
+Target searches:
+- Applied AI Engineer
+- AI Engineer
+- Agentic AI Engineer
+- AI Application Engineer
+- AI Agent Developer
+- Full Stack AI Engineer
+- Generative AI Engineer
+- AI-Native Software Engineer
+- Python/FastAPI AI Engineer
+- Junior/Mid Rust Backend Engineer
+- Rust × AI Developer
 
 ---
 
-## Weeks 17–20 — Unsafe Rust, Production AI, MLOps
+# Parallel weekly requirements
 
-### Rust
-- unsafe blocks and safety invariants
-- raw pointers
-- MaybeUninit
-- repr and layout
+Every week:
+- 1 coding-interview session in Python
+- 1 selected problem re-solved in Rust
+- 1 system-design prompt
+- 1 no-AI debugging block
+- 1 primary-source reading session
+- 1 measurable artifact shipped
+- 1 progress-scorecard update
+
+Every two weeks:
+- one public technical note or strong README update
+- one mock interview
+- one benchmark/eval comparison
+
+Every month:
+- retake one exam
+- create one demo/video/update
+- review résumé keywords against actual evidence
+- remove low-value backlog items
+
+---
+
+# February and beyond — mastery loop
+
+Continue applications and deepen independently in Rust and AI.
+
+## Rust expert cycles
+- unsafe + memory model
 - FFI
-- atomics basics
-- lock-free concepts
-- performance profiling
-- allocator awareness
+- atomics
+- async runtime internals
+- storage engines
+- networking
+- compilers/interpreters
+- profiling
+- open-source contributions
 
-Never write unsafe code only to appear advanced. Every unsafe block must document its safety invariant.
-
-### AI
-- fine-tuning concepts
-- LoRA/QLoRA
+## AI expert cycles
+- classical ML depth
+- transformer internals
+- fine-tuning/LoRA
 - quantization
 - model serving
-- batching
-- caching
-- evaluation pipelines
-- experiment tracking
-- drift and monitoring
-- model/data versioning
-- red-team tests
+- MLOps
+- evaluation science
+- research-paper reproduction
+- inference optimization
 
-### Build
-- fine-tune a small open model on a narrow dataset.
-- compare base vs tuned model using a fixed evaluation set.
-- serve a model behind an API.
-- add observability to your RAG/agent project.
-- implement one safe abstraction around a small justified unsafe Rust component.
+## Systems expert cycles
+- distributed systems
+- observability
+- databases
+- networking
+- Linux internals
+- security
+- cloud architecture
 
----
+## Rust × AI cycles
+- LLM gateway
+- high-throughput embedding pipeline
+- inference gateway
+- agent sandbox
+- evaluation platform
+- local model tooling
 
-## Weeks 21–24 — Capstone: Rust × AI Agent Runtime
+Each 8–12 week expert cycle must end with:
+1. primary-source reading,
+2. implementation,
+3. production version,
+4. benchmark/evaluation,
+5. technical write-up,
+6. open-source contribution or review,
+7. oral defense.
 
-Build the flagship project described in tracks/04-rust-ai-specialization.md.
-
-Required capabilities:
-- provider abstraction,
-- streaming,
-- structured output,
-- tool registry,
-- retries/timeouts/cancellation,
-- MCP client and server support,
-- RAG,
-- state/checkpointing,
-- approval policies,
-- tracing,
-- evaluation,
-- cost/latency accounting,
-- Docker,
-- CI,
-- production-style documentation.
-
-### Final defense
-You must:
-1. demo the system live,
-2. explain the architecture without notes,
-3. explain three failures and how you fixed them,
-4. defend why Rust is used,
-5. show benchmarks where performance claims are made,
-6. show eval results where AI-quality claims are made,
-7. answer questions from all four tracks.
-
----
-
-# Long-term expert loop: Month 7 onward
-
-Repeat this cycle every 8–12 weeks:
-
-1. Choose one deep topic.
-2. Read a primary source/book/paper.
-3. implement a minimal version.
-4. build a production version.
-5. benchmark/evaluate it.
-6. write a technical article.
-7. contribute a fix or feature to an open-source project.
-8. teach the topic or present it.
-
-Suggested deep cycles:
-- Rust unsafe and memory model.
-- async runtimes and schedulers.
-- databases/storage engines.
-- compilers and interpreters.
-- distributed systems.
-- CUDA/GPU fundamentals.
-- transformer internals.
-- inference optimization.
-- representation learning.
-- reinforcement learning.
-- agent evaluation.
-- retrieval systems.
-- Rust ML/AI ecosystem.
-- security engineering.
-
-Expertise is demonstrated by sustained depth, judgment, debugging ability, and contributions—not by finishing a checklist.
+Expertise comes from repeated depth and judgment, not the number of technologies listed.
