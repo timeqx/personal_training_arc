@@ -15,7 +15,10 @@ For coding/design questions, correctness alone is not full credit. Include reaso
 # Baseline Exam A — Rust
 
 1. Explain ownership in your own words.
+- every variable/memory is alone/unique entity, and you will need to throw it before you can modify or only borrow it when using to the other variables. because of this every memory is safe and intentional.
+
 2. What is the difference between move, Copy, and Clone?
+- move is to move the memory in the stash, copy i don't know, clone is cloning a variable/entity.
 3. Why does this fail?
 
 \`\`\`rust
@@ -25,18 +28,43 @@ x.push(4);
 println!("{y}");
 \`\`\`
 
+because y is cloning x then it push 4? or maybe because x is mutable while y is not.
+
 4. What is a lifetime?
+- the life of an variable/function/entity, inside the brackets. you can't use it outside or call it.
+
 5. When would you use Box, Rc, Arc?
+- don't know.
+
 6. Difference between Result and Option?
+- don't know.
+
 7. What does Send mean?
+- don't know.
+
 8. What does Sync mean?
+- don't know.
+
 9. Mutex vs RwLock?
+- don't know.
+
 10. Explain async/await without saying "it makes it asynchronous."
+async is saying function is waiting or dynamic and await means it waiting for a data/response to come.
+
 11. What is a Future?
+- meaning it has no initial value or dynamic yet.
+
 12. What does Pin protect?
+- don't know.
+
 13. Trait object vs generic?
+- don't know.
+
 14. What can unsafe Rust do that safe Rust cannot?
+- don't know, crash? lag?.
+
 15. Why is data-race freedom not the same as race-condition freedom?
+- don't know.
 
 Coding:
 16. Implement a generic function that returns the largest item from a slice.
