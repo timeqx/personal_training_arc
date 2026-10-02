@@ -1,153 +1,178 @@
-# Project Ladder
+# Project Strategy — Minimum Projects, Maximum Evidence
 
-Do not build all projects at once. Each project exists to prove a specific level.
+The optimized portfolio uses:
 
-## Project 1 — Rust CLI
-**Proves:** language fundamentals, API design, testing.
+1. **One flagship Rust × AI system**
+2. **One pure Rust/backend systems project**
+3. **One pure AI/ML project**
+4. Small exercises kept inside an exercises area rather than turned into shallow portfolio repos.
 
-Requirements:
-- config,
-- subcommands,
-- custom errors,
-- unit/integration tests,
-- CI,
-- documentation.
+This gives independent Rust proof, independent AI proof, and the differentiated Rust × AI niche.
 
-Examples:
-- log analyzer,
-- duplicate-file finder,
-- local task database.
+# Project A — Flagship Rust AI Agent Runtime
 
-## Project 2 — Concurrent Rust service
-**Proves:** concurrency/async/networking.
+This is the primary portfolio project.
 
-Requirements:
-- Tokio,
-- bounded concurrency,
-- timeout/retries,
-- graceful shutdown,
-- tracing,
-- load test.
+It should absorb:
+- provider abstraction,
+- Tokio async,
+- Axum API,
+- structured output,
+- tool calling,
+- MCP,
+- RAG,
+- pgvector/Qdrant,
+- orchestration,
+- evaluation,
+- observability,
+- security,
+- Docker,
+- cloud,
+- frontend trace/dashboard,
+- CI/CD.
 
-Example:
-- URL metadata crawler,
-- background-job processor.
+Do **not** split MCP, RAG, agent eval, and observability into separate shallow repositories unless they become genuinely reusable standalone libraries.
 
-## Project 3 — Classical ML system
-**Proves:** non-LLM AI fundamentals.
+## Required evidence
 
-Requirements:
-- dataset analysis,
-- baseline,
-- preprocessing,
-- cross-validation,
-- appropriate metrics,
-- error analysis,
-- inference API.
+- [ ] two LLM providers or one remote + one local provider
+- [ ] streaming
+- [ ] typed structured outputs
+- [ ] tool registry
+- [ ] retries/timeouts
+- [ ] bounded execution
+- [ ] cancellation
+- [ ] MCP client
+- [ ] MCP server
+- [ ] RAG
+- [ ] citations
+- [ ] retrieval evaluation
+- [ ] agent/tool evaluation
+- [ ] human approval
+- [ ] prompt-injection tests
+- [ ] tracing
+- [ ] token/cost tracking
+- [ ] p50/p95 latency
+- [ ] Docker
+- [ ] CI
+- [ ] live deployment
+- [ ] architecture diagram
+- [ ] demo video
+- [ ] benchmark/eval report
 
-## Project 4 — PyTorch model
-**Proves:** deep-learning competence.
+# Project B — Pure Rust Systems Project
 
-Requirements:
-- custom training loop,
-- train/validation separation,
-- checkpoint,
-- experiment comparison,
-- reproducibility notes.
+Purpose: prove your Rust ability is not limited to AI APIs.
 
-## Project 5 — Evaluated RAG system
-**Proves:** production AI application engineering.
+Choose one:
 
-Requirements:
-- ingestion,
-- chunking,
-- embeddings,
-- vector DB,
-- reranking,
-- citations,
-- evaluation set,
-- retrieval and answer metrics,
-- cost/latency.
+## Option 1 — Background job system
+- Tokio worker pool
+- bounded queue
+- retry/dead-letter behavior
+- idempotency
+- graceful shutdown
+- metrics
+- PostgreSQL
 
-Suggested domain:
-- software repository or technical documentation.
+## Option 2 — Mini key-value store
+- binary protocol
+- persistence/WAL concepts
+- concurrency
+- indexes
+- crash-recovery reasoning
+- benchmarks
 
-## Project 6 — Rust MCP server
-**Proves:** Rust + agent tooling.
+## Option 3 — High-performance crawler/indexer
+- bounded concurrency
+- deduplication
+- backpressure
+- persistent state
+- retry
+- profiling
 
-Requirements:
-- five tools,
-- schema validation,
-- safe permissions,
-- tests,
-- logging,
-- documentation.
+Required proof:
+- tests
+- benchmark
+- error model
+- tracing
+- load test
+- architecture write-up
+- at least one postmortem or failure analysis
 
-## Project 7 — Agent evaluation harness
-**Proves:** AI reliability skill.
+# Project C — Pure AI/ML Project
 
-Requirements:
-- versioned task dataset,
-- tool-choice metric,
-- argument-validity metric,
-- outcome metric,
-- latency/cost,
-- regression comparison.
+Purpose: prove you understand AI beyond LLM wrappers.
 
-## Project 8 — Rust AI runtime
-**Proves:** specialization.
+Build one compact end-to-end project containing:
+- data exploration
+- train/validation/test split
+- baseline
+- classical ML model
+- correct metrics
+- error analysis
+- PyTorch extension or comparison
+- reproducibility
+- inference API
 
-Use the requirements in tracks/04-rust-ai-specialization.md.
+Good domains:
+- text classification
+- anomaly/fraud-style synthetic problem
+- forecasting with careful leakage handling
+- tabular classification
 
----
+Then add one transformer learning exercise:
+- implement scaled dot-product attention
+- optionally train a tiny language model
 
-# Optional mastery projects
+This repository can be smaller than the flagship, but the methodology must be clean.
 
-## Storage engine
+# Exercises — not portfolio clutter
+
+Keep these as folders/notebooks/crates rather than separate repositories.
+
 Rust:
-- WAL concepts,
-- indexes,
-- compaction,
-- crash recovery.
+- borrow-checker drills
+- lifetimes
+- custom iterator
+- parser
+- thread pool
+- manual Future exercise
+- unsafe/Miri exercises
 
-## Mini async runtime
-Learning-only project:
-- understand Future/Waker/task scheduling.
+AI:
+- linear/logistic regression from scratch
+- metrics
+- PyTorch training loop
+- attention
+- embedding experiments
+- retrieval comparison
 
-## Compiler/interpreter
-- lexer,
-- parser,
-- AST,
-- evaluator,
-- optional bytecode.
+Systems:
+- TCP server
+- SQL EXPLAIN drills
+- retry/idempotency exercises
+- Docker drills
 
-## Mini transformer
-Python/PyTorch:
-- tokenizer or simple tokenization pipeline,
-- attention,
-- transformer blocks,
-- tiny training run.
+# Open-source work
 
-## Model inference server
-- batching,
-- queueing,
-- metrics,
-- load tests.
+After the flagship stabilizes, target **3–5 meaningful merged PRs** over time.
 
-## Distributed job system
-- worker pool,
-- idempotency,
-- retry,
-- dead letter,
-- observability.
+Good areas:
+- Rust AI libraries
+- MCP SDK/tooling
+- LLM clients
+- Qdrant/pgvector ecosystem
+- Tokio/Axum ecosystem documentation/tests
+- agent/evaluation libraries
 
----
+Start with docs/tests/bugs. Progress to implementation changes.
 
-# Project quality checklist
+# Portfolio quality gate
 
-Every portfolio project should have:
+Every portfolio project must have:
 
-- [ ] problem statement
+- [ ] clear problem statement
 - [ ] architecture diagram
 - [ ] reason for technology choices
 - [ ] setup instructions
@@ -156,21 +181,23 @@ Every portfolio project should have:
 - [ ] realistic error handling
 - [ ] security considerations
 - [ ] observability
-- [ ] benchmark or evaluation where relevant
+- [ ] benchmark/evaluation where relevant
 - [ ] known limitations
 - [ ] roadmap
-- [ ] screenshots/demo
-- [ ] concise résumé bullets
+- [ ] screenshots
+- [ ] short demo
+- [ ] résumé bullets
+- [ ] at least one failure/postmortem note
 
-## "Not portfolio-ready" warning signs
+## Not portfolio-ready
 
-- only one giant file,
 - copied tutorial architecture,
+- generic chatbot,
 - no tests,
+- no evals,
 - no error handling,
-- secrets committed,
-- no README,
-- no evaluation for AI claims,
-- performance claims without benchmarks,
-- "multi-agent" architecture where one deterministic function would suffice,
-- dozens of technologies added only for keywords.
+- no measurable result,
+- performance claims without benchmark,
+- multi-agent design without a reason,
+- unnecessary microservices,
+- dozens of technologies added for keywords.
