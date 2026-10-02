@@ -1,74 +1,126 @@
 # Personal Training Arc
 
-A rigorous, evidence-based curriculum for becoming:
+A rigorous, evidence-based training system for becoming:
 
-1. a strong **Rust engineer** in your own right,
-2. a strong **AI/ML engineer** in your own right,
+1. a strong **Rust engineer** independently,
+2. a strong **AI/ML engineer** independently,
 3. a strong **backend/systems engineer** who can ship production software, and
 4. a differentiated **Rust × AI engineer** who can build high-performance AI infrastructure, agents, runtimes, and developer tooling.
 
-This is intentionally **not** a "learn enough Rust to call an LLM" roadmap and not a collection of chatbot tutorials.
+This is **not** a "learn enough Rust to call an LLM" roadmap and not a collection of chatbot tutorials.
 
-## Outcome
+## Primary career direction
 
-The near-term objective is to become competitive for Applied AI Engineer, Agentic AI Engineer, AI-Native Software Engineer, Full-Stack AI Engineer, Python/FastAPI AI Engineer, and junior/mid Rust-backend opportunities.
+Near-term positioning:
 
-The long-term objective is genuine mastery. Job readiness can improve in months; expertise is a multi-year practice.
+> **Full-Stack / Applied AI Engineer with strong Python/FastAPI production experience, growing Rust systems depth, and demonstrable agentic AI engineering.**
+
+Target roles:
+- Applied AI Engineer
+- Agentic AI Engineer
+- AI Application Engineer
+- AI Agent Developer
+- Full-Stack AI Engineer
+- Generative AI Engineer
+- AI-Native Software Engineer
+- Python/FastAPI AI Engineer
+- Junior/Mid Rust Backend Engineer
+- Rust × AI / AI Infrastructure Engineer
+
+Long-term positioning:
+
+> **Rust expert + AI expert, with Rust × AI systems as a distinctive specialization.**
+
+No roadmap can guarantee a job. The purpose of this repository is to maximize evidence, interview readiness, and relevance to the roles above.
+
+## Efficient structure
+
+The curriculum is split into two layers.
+
+### Layer A — Hiring-critical sprint
+Use [HIRING_CRITICAL_PATH.md](HIRING_CRITICAL_PATH.md) and [ROADMAP.md](ROADMAP.md).
+
+Everything in this layer must produce one of:
+- a portfolio artifact,
+- a measurable result,
+- an interview skill,
+- a résumé bullet,
+- a GitHub proof point.
+
+### Layer B — Expert-depth track
+Continue the four mastery tracks after the hiring-critical layer:
+- Rust internals, unsafe, FFI, performance, systems
+- ML/deep learning/transformers/research literacy
+- distributed systems/cloud/security
+- Rust × AI infrastructure specialization
 
 ## Repository map
 
 | File | Purpose |
 | --- | --- |
-| [ROADMAP.md](ROADMAP.md) | 24-week intensive plan + long-term mastery extension |
+| [HIRING_CRITICAL_PATH.md](HIRING_CRITICAL_PATH.md) | Must-have vs later skills; the shortest path to stronger applications |
+| [ROADMAP.md](ROADMAP.md) | 16-week Oct–Jan hiring sprint + long-term mastery |
 | [tracks/01-rust-mastery.md](tracks/01-rust-mastery.md) | Rust from ownership through async, unsafe, performance, FFI, and systems |
 | [tracks/02-ai-ml-mastery.md](tracks/02-ai-ml-mastery.md) | Math, classical ML, deep learning, transformers, LLMs, agents, evals, MLOps |
 | [tracks/03-systems-backend-cloud.md](tracks/03-systems-backend-cloud.md) | Linux, networking, databases, distributed systems, security, cloud, observability |
-| [tracks/04-rust-ai-specialization.md](tracks/04-rust-ai-specialization.md) | Your niche: production AI systems powered by Rust |
-| [practice/routine.md](practice/routine.md) | Daily/weekly practice system |
-| [projects/project-ladder.md](projects/project-ladder.md) | Projects that prove increasing levels of ability |
+| [tracks/04-rust-ai-specialization.md](tracks/04-rust-ai-specialization.md) | Production AI systems powered by Rust |
+| [practice/routine.md](practice/routine.md) | Daily/weekly deliberate-practice system |
+| [projects/project-ladder.md](projects/project-ladder.md) | Minimal project set with maximum evidence |
+| [portfolio/application-assets.md](portfolio/application-assets.md) | GitHub, résumé, demo, architecture, and application checklist |
 | [exams/exam-bank.md](exams/exam-bank.md) | Written, coding, debugging, design, and oral exams |
 | [interviews/interview-bank.md](interviews/interview-bank.md) | Interview questions and mock-interview prompts |
 | [resources/reading-list.md](resources/reading-list.md) | Primary-source reading list |
-| [progress/scorecard.md](progress/scorecard.md) | Evidence-based self-assessment |
+| [progress/scorecard.md](progress/scorecard.md) | Evidence-based readiness scorecard |
 
 ## Rules
 
-- **No résumé keyword without evidence.** Only list a technology after you have built, tested, and explained something with it.
-- **No tutorial-only completion.** Every topic ends with an exercise, a debugging task, or a deliverable.
-- **Use AI as a reviewer, not as a substitute for thinking.** For core drills, attempt the problem first without an agent.
-- **Explain before you optimize.** You should be able to explain why code works before benchmarking it.
+- **No résumé keyword without evidence.**
+- **No tutorial-only completion.**
+- **Prefer one integrated flagship project over five shallow demos.**
+- **Use AI as reviewer, pair programmer, and critic—not as a substitute for reasoning.**
+- **At least three weekly practice blocks must start without AI assistance.**
 - **Benchmark before claiming performance.**
+- **Evaluate before claiming AI quality improved.**
 - **Test before claiming reliability.**
-- **Measure AI quality before claiming the agent or RAG system improved.**
-- **Read source material and documentation, not only summaries.**
-- **Keep an engineering journal.** Record what failed, what you learned, and what you would redesign.
+- **Read primary docs/specs before framework blog posts.**
+- **Ship weekly.**
+- **Record failures and fixes.**
+- **Apply before you feel "finished."**
 
 ## Definition of "known"
 
-A skill is not considered learned because you saw it once.
+A topic counts only when you can:
 
-For each important topic, aim to pass four levels:
+1. **Explain** it without notes.
+2. **Implement** a useful version.
+3. **Debug** a broken version.
+4. **Design** with it and defend tradeoffs.
 
-1. **Explain** — describe it accurately without notes.
-2. **Implement** — build a minimal version from memory.
-3. **Debug** — diagnose a broken version.
-4. **Design** — know when to use it, when not to use it, and the tradeoffs.
+## Near-term application gate
 
-## Near-term application checkpoint
-
-Start applying before the entire curriculum is complete. A reasonable application checkpoint is when you have:
+Start serious applications once you can demonstrate:
 
 - one deployed AI application,
-- one serious Rust project,
-- one production-style RAG/evaluation project,
-- a working Rust AI-agent runtime or MCP project,
-- automated tests and CI,
-- Dockerized deployment,
-- a strong README and architecture diagram,
-- the ability to discuss tradeoffs without reading notes.
+- one serious Rust system,
+- a working Rust AI-agent runtime or equivalent systems project,
+- MCP client/server work,
+- production-style RAG,
+- automated evaluation,
+- tests and CI,
+- Docker deployment,
+- basic cloud operation,
+- tracing/observability,
+- architecture diagram,
+- 2–3 minute demo,
+- measurable results,
+- the ability to explain tradeoffs without notes.
 
-Your current professional full-stack experience remains an asset; this repository is meant to add verifiable Rust and AI depth on top of it.
+You do **not** need to finish advanced unsafe Rust, fine-tuning, Kubernetes, advanced calculus, or research-level ML before applying.
 
 ## Start
 
-Read [ROADMAP.md](ROADMAP.md), take the baseline exam in [exams/exam-bank.md](exams/exam-bank.md), then create your first progress entry using [progress/scorecard.md](progress/scorecard.md).
+1. Read [HIRING_CRITICAL_PATH.md](HIRING_CRITICAL_PATH.md).
+2. Take the baseline exams in [exams/exam-bank.md](exams/exam-bank.md).
+3. Fill [progress/scorecard.md](progress/scorecard.md).
+4. Start Week 1 in [ROADMAP.md](ROADMAP.md).
+5. Treat the flagship Rust AI runtime as the central artifact that absorbs most hiring-critical work.
