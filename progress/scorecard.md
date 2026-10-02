@@ -10,9 +10,56 @@ Scale:
 - 4 = can build/debug independently
 - 5 = can design, review, teach, and defend tradeoffs
 
-A score of 5 should be rare.
+A 5 should be rare.
 
-## Rust
+# Hiring-critical dashboard
+
+| Capability | Target | Score | Evidence |
+| --- | ---: | ---: | --- |
+| Python/FastAPI production | 4 | 0 | |
+| Rust ownership/borrowing | 4 | 0 | |
+| Rust traits/generics | 4 | 0 | |
+| Tokio/async/concurrency | 4 | 0 | |
+| Axum/networking | 3–4 | 0 | |
+| LLM structured outputs | 4 | 0 | |
+| Tool calling | 4 | 0 | |
+| Agent architecture | 4 | 0 | |
+| MCP client/server | 4 | 0 | |
+| RAG | 4 | 0 | |
+| Retrieval evaluation | 4 | 0 | |
+| Agent evaluation | 4 | 0 | |
+| PostgreSQL/pgvector | 4 | 0 | |
+| Docker | 4 | 0 | |
+| Cloud deployment | 3 | 0 | |
+| Observability/tracing | 3–4 | 0 | |
+| Testing/CI | 4 | 0 | |
+| System design | 3–4 | 0 | |
+| Security/permissions | 3 | 0 | |
+
+## Application evidence gate
+
+- [ ] flagship repo public/presentable
+- [ ] pure Rust systems repo presentable
+- [ ] pure AI/ML repo presentable
+- [ ] live flagship demo
+- [ ] architecture diagram
+- [ ] 2–3 minute demo video
+- [ ] 50+ AI eval tasks
+- [ ] baseline vs improved eval result
+- [ ] benchmark report
+- [ ] threat model
+- [ ] CI green
+- [ ] Dockerized
+- [ ] cloud deployment
+- [ ] 3 strong résumé bullets for flagship
+- [ ] GitHub profile polished
+- [ ] 2 Rust mock interviews passed
+- [ ] 2 AI mock interviews passed
+- [ ] 2 system-design mocks passed
+
+You can start applying before every box is checked. This gate indicates a **strong** portfolio state, not permission to apply.
+
+# Rust depth
 
 | Skill | Score | Evidence | Next proof |
 | --- | ---: | --- | --- |
@@ -32,7 +79,7 @@ A score of 5 should be rare.
 | FFI | 0 | | |
 | Cargo/ecosystem | 0 | | |
 
-## AI / ML
+# AI / ML depth
 
 | Skill | Score | Evidence | Next proof |
 | --- | ---: | --- | --- |
@@ -54,7 +101,7 @@ A score of 5 should be rare.
 | Model serving | 0 | | |
 | MLOps | 0 | | |
 
-## Systems / production
+# Systems / production
 
 | Skill | Score | Evidence | Next proof |
 | --- | ---: | --- | --- |
@@ -69,7 +116,7 @@ A score of 5 should be rare.
 | Observability | 0 | | |
 | System design | 0 | | |
 
-## Rust × AI
+# Rust × AI
 
 | Skill | Score | Evidence | Next proof |
 | --- | ---: | --- | --- |
@@ -84,33 +131,7 @@ A score of 5 should be rare.
 | Benchmarking | 0 | | |
 | Production deployment | 0 | | |
 
----
-
-# Weekly evidence log
-
-## Week:
-### Shipped
--
-### Tests/evals added
--
-### Bug I diagnosed
--
-### Concept I can now explain without notes
--
-### Concept I failed to explain
--
-### Benchmark/eval result
--
-### Reading completed
--
-### Interview practice
--
-### Next week
--
-
----
-
-# Job-readiness gates
+# Job-family gates
 
 ## Applied / Agentic AI Engineer
 Aim for:
@@ -135,12 +156,36 @@ Aim for:
 - performance: 3+
 - Linux: 3+
 
-## Rust × AI role
+## Rust × AI
 Aim for both sets plus:
 - MCP: 4
 - Rust agent runtime: 4
 - eval harness: 4
 - observability: 3+
 - security/permissions: 3+
+
+# Weekly evidence log
+
+## Week:
+### Shipped
+-
+### Tests/evals added
+-
+### Bug I diagnosed
+-
+### Concept I can explain without notes
+-
+### Concept I failed to explain
+-
+### Benchmark/eval result
+-
+### Reading completed
+-
+### Interview practice
+-
+### Application action
+-
+### Next week
+-
 
 These scores are self-assessment aids, not credentials. Evidence links matter more.
